@@ -1,3 +1,13 @@
+<?php
+  error_reporting(0);
+  if(!isset($_SESSION)){
+    session_start();
+    $username='';
+    if($_SESSION['username'])
+      $username = $_SESSION['username'];
+  }
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -18,10 +28,22 @@
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav m-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link" aria-current="page" href="/todo/">Home</a>
+            <?php
+            if($username)
+              echo "<a class='nav-link' href='/todo/pages/home.php'>$username</a></li>";
+            else  
+              echo "<a class='nav-link' href='/todo/'>Home</a></li>";
+            ?>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="/todo/pages/login.php">Login</a>
+          <?php
+        if($username){
+          echo "<a class='nav-link' href='/todo/pages/logout.php'>Logout</a></li>";
+        }
+        else{
+          echo "<a class='nav-link' href='/todo/pages/login.php'>Login</a>";
+        }
+        ?>
         </li>
       </ul>
     </div>
