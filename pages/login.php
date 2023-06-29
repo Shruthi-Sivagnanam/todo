@@ -1,5 +1,11 @@
 <?php
     include("../components/header.php");
+
+    if(isset($_SESSION)){
+        if($_SESSION['username'] && $_SESSION['email']){
+            header("location: /todo/pages/home.php");
+        }
+    }
 ?>
 
 <div class="container">

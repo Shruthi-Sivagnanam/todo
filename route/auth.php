@@ -16,7 +16,7 @@
             //echo "right";
             $query = "INSERT INTO user (username,email,password) VALUES ('$username','$email','$password')";
             $result = mysqli_query($conn,$query);
-            $_SESSION['result'] = $result;
+            $_SESSION['signupResult'] = $result;
             header("location: /todo/pages/redirect.php");
             //echo "<script type='text/javascript'>alert('Signed Up successfully! Please login to continue');</script>";
 
@@ -38,7 +38,10 @@
         $username = $data['username'];
 
         $_SESSION['username'] = $username;
-        header("location: /todo/pages/home.php");
+        $_SESSION['email'] = $email;
+        //$_SESSION['loginResult'] = $result;
+        //echo $username;
+        header("location: /todo/pages/redirect2.php");
     }
 
     // for logout

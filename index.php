@@ -1,5 +1,11 @@
 <?php 
     include("./components/header.php");
+
+    if(isset($_SESSION)){
+        if($_SESSION['username'] && $_SESSION['email']){
+            header("location: /todo/pages/home.php");
+        }
+    }
 ?>
 
 <div class="container">
@@ -11,7 +17,8 @@
                 class="btn btn-outline-primary btn-md" 
                 role="button" aria-pressed="true"
                 >
-                Get Started ->
+                Get Started
+                <i class="fa fa-arrow-right"></i>
             </a>
 
         </div>
