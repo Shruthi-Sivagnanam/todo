@@ -25,7 +25,7 @@
             Error in adding!
             <button type='button' class='btn-close' data-bs-dismiss='alert' aria-label='Close'></button>
             </div>";
-        $_SESSION['result']="";
+        $_SESSION['result']=-1;
     }
     else if($_SESSION['deleteResult']){
         echo"
@@ -53,3 +53,14 @@
     </div>
     <?php include("../components/todoelement.php"); ?>
 </div>
+<div class="mb-5"></div>
+<div class="mb-5"></div>
+<div class="mb-5"></div>
+
+<div class="mb-5"></div>
+<div class="mb-5"></div>
+<div class="mb-5"></div>
+
+<?php
+    include("../components/footer.php");
+?>

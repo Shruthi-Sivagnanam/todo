@@ -20,9 +20,10 @@
 
     if(isset($_POST['deleteTodo'])){
         $id = $_POST['id'];
-        $query = "DELETE FROM todo WHERE id='$id'";
+        $query = "DELETE FROM todos WHERE id='$id'";
         $result = mysqli_query($conn,$query);
         $_SESSION['deleteResult'] = $result;
+        //echo $id;
         header("location: /todo/pages/home.php");
     }
 ?>

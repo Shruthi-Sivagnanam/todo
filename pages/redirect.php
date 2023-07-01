@@ -21,3 +21,6 @@
         echo "<center><a href='/todo/pages/signup.php' class='btn btn-outline-primary'><i class='fa fa-arrow-left'></i> Signup</a></center>";
     }
 ?>
+<?php
+    include("../components/footer.php");
+?>

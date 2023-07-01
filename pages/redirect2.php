@@ -14,3 +14,7 @@
         header("location: /todo/pages/home.php");
     }
 ?>
+
+<?php
+    include("../components/footer.php");
+?>
